@@ -7,7 +7,7 @@ export default function ProjectManagementSection() {
     },
     {
       step: 2, 
-      title: "Echange avec les parties prenantes salariés (poseurs, chef d'équipe, atelier, dessinateur/projeteur, conduc…)",
+      title: "Echange avec les parties prenantes salariés (chef d'équipe, atelier, dessinateur/projeteur, conduc…)",
       icon: "👥"
     },
     {
@@ -22,12 +22,12 @@ export default function ProjectManagementSection() {
     },
     {
       step: 5,
-      title: "On démarre tout petit, 1 fonctionnalités primaires en 7 jours. Testé par vous et vos salariés",
+      title: "On démarre tout petit, 1 fonctionnalités prioritaires en 15 jours. Testée par toutes les parties prenantes",
       icon: "🚀"
     },
     {
       step: 6,
-      title: "Livraison tous les 7j en moyenne sur une nouvelle fonctionnalités",
+      title: "Livraison tous les 15j en moyenne sur une nouvelle fonctionnalité",
       icon: "⚡"
     }
   ];

@@ -27,3 +27,55 @@ body {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
+/* Animation de gradient organique pour le background */
+@keyframes gradient-organic {
+  0% { 
+    background-position: 0% 20%; 
+  }
+  15% { 
+    background-position: 80% 40%; 
+  }
+  30% { 
+    background-position: 30% 80%; 
+  }
+  45% { 
+    background-position: 70% 10%; 
+  }
+  60% { 
+    background-position: 20% 60%; 
+  }
+  75% { 
+    background-position: 90% 30%; 
+  }
+  90% { 
+    background-position: 40% 90%; 
+  }
+  100% { 
+    background-position: 0% 20%; 
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-organic 20s ease-in-out infinite;
+  background-size: 300% 300%;
+}
+
+/* Animation de scroll pour le carrousel de témoignages */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-320px * 5 - 32px * 5));
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 25s linear infinite;
+  width: calc(320px * 10 + 32px * 10);
+}
+
+.animate-scroll-left:hover {
+  animation-play-state: paused;
+}
+

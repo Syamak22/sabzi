@@ -1,16 +1,17 @@
 // Landing page Sabzi - Agence Tech Charpentiers & Menuisiers
 // Logiciels spécifiques, automatisation et IA sur-mesure
 
-import Header from '@/components/Header';
-import HeroSection from '@/components/HeroSection';
-import VideoSection from '@/components/VideoSection';
-import ProcessSection from '@/components/ProcessSection';
-import ProjectManagementSection from '@/components/ProjectManagementSection';
-import PricingSection from '@/components/PricingSection';
+import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
+import VideoSection from "@/components/VideoSection";
+import TestimonialSection from "@/components/TestimonialSection";
+import ProcessSection from "@/components/ProcessSection";
+import ProjectManagementSection from "@/components/ProjectManagementSection";
+import PricingSection from "@/components/PricingSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#125514] to-black">
+    <div className="min-h-screen bg-gradient-to-br from-[#125514] via-[#8b45137e] via-[#b8870b93] via-[#228b22] via-[#104607] via-[#2cd70a9d] to-[#006400] animate-gradient-x">
       {/* Header avec logo et liens sociaux */}
       <Header />
 
@@ -23,6 +24,9 @@ export default function Home() {
       {/* Section Processus - Notre Méthode (4 étapes) */}
       <ProcessSection />
 
+      {/* Section Témoignages */}
+      <TestimonialSection />
+
       {/* Section Gestion de Projet (approche sur-mesure) */}
       <ProjectManagementSection />
 
@@ -33,26 +37,24 @@ export default function Home() {
       <footer className="border-t border-white/10 py-12">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <div className="mb-8">
-            <h3 className="text-2xl font-arvo text-white mb-4">
-              Sabzi
-            </h3>
+            <h3 className="text-2xl font-arvo text-white mb-4">Sabzi</h3>
             <p className="text-white/80 font-inter max-w-2xl mx-auto">
-              Agence tech spécialisée dans le secteur charpente/menuiserie. 
-              Logiciels sur-mesure, automatisation et IA pour professionnels du bois.
+              Agence tech & IA spécialisée dans le secteur de la construction <br></br>
+              Logiciels sur-mesure, automatisation et IA pour professionnels.
             </p>
           </div>
-          
+
           {/* Contact */}
           <div className="mb-8">
             <p className="text-white/90 font-inter">
-              📧 contact@sabzi.fr | 📞 +33 (0)1 XX XX XX XX
+              📧 contact@syamakazadeh.com | 📞 +33 6 75 45 30 07
             </p>
           </div>
-          
+
           {/* Copyright */}
           <div className="border-t border-white/10 pt-6">
             <p className="text-white/60 font-inter text-sm">
-              &copy; 2024 Sabzi. Tous droits réservés. Solutions tech pour charpentiers et menuisiers.
+              &copy; 2024 Sabzi. Tous droits réservés.
             </p>
           </div>
         </div>

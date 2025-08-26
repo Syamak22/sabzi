@@ -19,12 +19,12 @@ export default function PricingSection() {
             {/* Contenu principal */}
             <div className="space-y-6">
               <h2 className="text-2xl md:text-3xl font-arvo text-white leading-relaxed">
-                Logiciel à la demande, automatisation et IA
+                Logiciels, automatisation et IA sur mesures
               </h2>
               
               {/* Prix principal */}
               <div className="text-4xl md:text-5xl font-arvo font-bold text-white">
-                À partir de <span className="text-white">5000€</span>
+                À partir de <span className="text-white">2500€</span>
               </div>
               
               {/* Détails */}
@@ -36,16 +36,13 @@ export default function PricingSection() {
                 </p>
                 <p>Scope défini avant de commencer</p>
                 <p className="font-bold text-white">
-                  <span className="bg-white/20 px-4 py-2 rounded-lg">
-                    Prix fixe
-                  </span>
                 </p>
               </div>
               
               {/* CTA */}
               <div className="pt-6">
                 <button className="relative overflow-hidden bg-white text-[#125514] px-8 py-4 rounded-full text-lg font-inter font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg group">
-                  <span className="relative z-10">Demander un devis gratuit</span>
+                  <span className="relative z-10">Demander mon audit offert</span>
                   <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-green-400/30 to-transparent transform -skew-x-12 group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
                 </button>
               </div>
