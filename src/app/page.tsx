@@ -39,7 +39,8 @@ export default function Home() {
           <div className="mb-8">
             <h3 className="text-2xl font-arvo text-white mb-4">Sabzi</h3>
             <p className="text-white/80 font-inter max-w-2xl mx-auto">
-              Agence tech & IA spécialisée dans le secteur de la construction <br></br>
+              Agence tech & IA spécialisée dans le secteur de la construction{" "}
+              <br></br>
               Logiciels sur-mesure, automatisation et IA pour professionnels.
             </p>
           </div>
