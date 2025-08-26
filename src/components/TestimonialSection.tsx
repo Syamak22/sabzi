@@ -70,7 +70,7 @@ export default function TestimonialSection() {
 
                 {/* Témoignage */}
                 <blockquote className="text-white font-inter mb-6 text-base leading-relaxed">
-                  "{testimonial.text}"
+                  {testimonial.text}
                 </blockquote>
 
                 {/* Attribution */}
@@ -106,7 +106,7 @@ export default function TestimonialSection() {
 
                 {/* Témoignage */}
                 <blockquote className="text-white font-inter mb-6 text-base leading-relaxed">
-                  "{testimonial.text}"
+                  {testimonial.text}
                 </blockquote>
 
                 {/* Attribution */}
