@@ -16,8 +16,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Sabzi - Agence Tech Charpentiers & Menuisiers",
-  description: "Logiciels spécifiques, automatisation et IA pour charpentiers et menuisiers. Solutions sur-mesure à partir de 5000€.",
+  title: "Sabzi - Agence tech & IA dédiée aux entreprises de la construction",
+  description: "Logiciels spécifiques, automatisation et IA.",
+  keywords:
+    "tech, IA, construction, automatisation, logiciels, entreprise, digital, BTP",
+  openGraph: {
+    title: "Sabzi - Agence tech & IA",
+    description: "Solutions tech dédiées à la construction",
+    url: "https://sabzi.tech",
+    siteName: "Sabzi",
+  },
 };
 
 export default function RootLayout({
