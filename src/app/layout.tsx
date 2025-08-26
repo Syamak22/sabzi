@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     "tech, IA, construction, automatisation, logiciels, entreprise, digital, BTP",
   openGraph: {
     title: "Sabzi - Agence tech & IA",
-    description: "Solutions tech & IA dédiées aux entreprises de la construction",
+    description:
+      "Solutions tech & IA dédiées aux entreprises de la construction",
     url: "https://sabzi.tech",
     siteName: "Sabzi",
   },
