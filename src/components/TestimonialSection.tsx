@@ -9,13 +9,13 @@ export default function TestimonialSection() {
     {
       name: "Marie Lefèvre",
       company: "Menuiserie Artisanale ML",
-      text: "L'automatisation des devis nous a permis de traiter 2x plus de demandes. Le ROI était visible dès le premier mois. Une équipe à l'écoute et très réactive.",
+      text: "L&apos;automatisation des devis nous a permis de traiter 2x plus de demandes. Le ROI était visible dès le premier mois. Une équipe à l&apos;écoute et très réactive.",
       rating: 5,
     },
     {
       name: "Jean-Claude Martin",
       company: "Construction Martin & Fils",
-      text: "L'IA pour l'optimisation des matériaux nous a fait économiser 15% sur nos achats. Un outil précieux pour rester compétitif sur le marché.",
+      text: "L&apos;IA pour l&apos;optimisation des matériaux nous a fait économiser 15% sur nos achats. Un outil précieux pour rester compétitif sur le marché.",
       rating: 5,
     },
     {
@@ -27,7 +27,7 @@ export default function TestimonialSection() {
     {
       name: "Thomas Bernard",
       company: "Charpente & Co",
-      text: "Grâce à l'IA de Sabzi, nous optimisons nos découpes et réduisons le gaspillage. C'est un game-changer pour notre rentabilité.",
+      text: "Grâce à l&apos;IA de Sabzi, nous optimisons nos découpes et réduisons le gaspillage. C&apos;est un game-changer pour notre rentabilité.",
       rating: 5,
     },
   ];
