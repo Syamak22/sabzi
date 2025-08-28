@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: linear-gradient(to bottom, #125514, #000000); /* Dégradé vert vers noir */
+  --background: linear-gradient(
+    to bottom,
+    #125514,
+    #000000
+  ); /* Dégradé vert vers noir */
   --foreground: #ffffff; /* Blanc pour le texte */
 }
 
@@ -29,29 +33,29 @@ body {
 
 /* Animation de gradient organique pour le background */
 @keyframes gradient-organic {
-  0% { 
-    background-position: 0% 20%; 
+  0% {
+    background-position: 0% 20%;
   }
-  15% { 
-    background-position: 80% 40%; 
+  15% {
+    background-position: 80% 40%;
   }
-  30% { 
-    background-position: 30% 80%; 
+  30% {
+    background-position: 30% 80%;
   }
-  45% { 
-    background-position: 70% 10%; 
+  45% {
+    background-position: 70% 10%;
   }
-  60% { 
-    background-position: 20% 60%; 
+  60% {
+    background-position: 20% 60%;
   }
-  75% { 
-    background-position: 90% 30%; 
+  75% {
+    background-position: 90% 30%;
   }
-  90% { 
-    background-position: 40% 90%; 
+  90% {
+    background-position: 40% 90%;
   }
-  100% { 
-    background-position: 0% 20%; 
+  100% {
+    background-position: 0% 20%;
   }
 }
 
@@ -78,4 +82,3 @@ body {
 .animate-scroll-left:hover {
   animation-play-state: paused;
 }
-
