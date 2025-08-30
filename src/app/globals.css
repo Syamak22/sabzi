@@ -43,6 +43,7 @@ body {
       #0b1c0d 30%, 
       #0a180b 50%
     );
+  background-size: 300% 300%;
 }
 
 /* Animation de translation continue du dégradé */
@@ -56,7 +57,7 @@ body {
 }
 
 .animate-gradient-x {
-  animation: diagonal-flow 8s linear infinite;
+  animation: diagonal-flow 6s ease-in-out infinite;
 }
 
 /* Animation de scroll pour le carrousel de témoignages */

@@ -11,7 +11,7 @@ import PricingSection from "@/components/PricingSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-dual-diagonal">
+    <div className="min-h-screen animate-gradient-x bg-dual-diagonal">
       {/* Header avec logo et liens sociaux */}
       <Header />
 
