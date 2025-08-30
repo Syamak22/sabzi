@@ -3,14 +3,14 @@ export default function HeroSection() {
     <section className="py-20 px-6 text-center">
       <div className="max-w-6xl mx-auto">
         {/* Tag bulle stylé en haut */}
-        <div className="mb-12 flex justify-center">
+        {/* <div className="mb-12 flex justify-center">
           <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
             <p className="text-white text-sm font-inter">
               🔍 Découvrez notre livre blanc : comment réfléchir mes process et
               les automatiser seul
             </p>
           </div>
-        </div>
+        </div> */}
 
         {/* H1 - Arvo Regular */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-arvo font-normal text-white mb-8 leading-relaxed">
