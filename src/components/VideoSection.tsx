@@ -17,9 +17,9 @@ export default function VideoSection() {
         <h2 className="text-3xl md:text-4xl font-arvo text-white mb-8">
           Découvrez notre approche
         </h2>
-        <h3 className="text-white/80 font-inter max-w-md mx-auto mb-12 text-xl">
-          Comment nous accompagnons les entrepreneurs dans leur
-          transformation digitale grâce à nos solutions sur-mesure.
+        <h3 className="text-white/80 font-inter whitespace-normal mx-auto mb-12 text-xl">
+          Comment nous accompagnons les entrepreneurs dans leur transformation
+          digitale grâce à nos solutions sur-mesure.
         </h3>
 
         {/* Container vidéo */}

@@ -1,6 +1,7 @@
 // Landing page Sabzi - Agence Tech Charpentiers & Menuisiers
 // Logiciels spécifiques, automatisation et IA sur-mesure
 
+import Image from "next/image";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import VideoSection from "@/components/VideoSection";
@@ -37,7 +38,15 @@ export default function Home() {
       <footer className="border-t border-white/10 py-12">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <div className="mb-8">
-            <h3 className="text-2xl font-arvo text-white mb-4">Sabzi</h3>
+            <h3 className="text-2xl font-arvo text-white mb-4">
+              <Image
+                src="/logo_blanc.png"
+                alt="Logo Sabzi"
+                width={100}
+                height={100}
+                className="inline mr-2"
+              />
+            </h3>
             <p className="text-white/80 font-inter max-w-2xl mx-auto">
               Agence tech & IA spécialisée dans le secteur de la construction{" "}
               <br></br>
@@ -55,7 +64,7 @@ export default function Home() {
           {/* Copyright */}
           <div className="border-t border-white/10 pt-6">
             <p className="text-white/60 font-inter text-sm">
-              &copy; 2024 Sabzi. Tous droits réservés.
+              &copy; 2025 Sabzi. Tous droits réservés.
             </p>
           </div>
         </div>

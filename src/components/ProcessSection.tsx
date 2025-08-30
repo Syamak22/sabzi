@@ -37,8 +37,6 @@ export default function ProcessSection() {
           <h2 className="text-3xl md:text-4xl font-arvo text-white mb-6">
             Notre Méthode
           </h2>
-
-          <div className="w-24 h-1 bg-white mx-auto"></div>
         </div>
 
         {/* Grille des étapes */}

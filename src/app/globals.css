@@ -31,6 +31,11 @@ body {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
+/* Tous les H2 en bold */
+h2 {
+  font-weight: 600;
+}
+
 /* Dégradé double diagonal miroir - tons verts foncés */
 .bg-dual-diagonal {
   background-image: 
