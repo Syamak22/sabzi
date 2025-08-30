@@ -9,12 +9,6 @@
   --foreground: #ffffff; /* Blanc pour le texte */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-arvo: var(--font-arvo); /* Pour H1 et H2 */
-  --font-inter: var(--font-inter); /* Pour body et sous-titres */
-}
 
 body {
   background: var(--background);
@@ -78,7 +72,7 @@ h2 {
 }
 
 .animate-scroll-left {
-  animation: scroll-left 10s linear infinite;
+  animation: scroll-left 20s linear infinite;
   width: calc(320px * 10 + 32px * 10);
 }
 
