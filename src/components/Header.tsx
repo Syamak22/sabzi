@@ -8,10 +8,10 @@ export default function Header() {
         <div className="flex items-center">
           <h1 className="text-2xl font-bold text-white font-arvo">
             <Image
-              src="/logo.svg"
+              src="/logo_blanc.png"
               alt="Logo Sabzi"
-              width={32}
-              height={32}
+              width={200}
+              height={200}
               className="inline mr-2"
             />
           </h1>

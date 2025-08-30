@@ -3,8 +3,8 @@
 :root {
   --background: linear-gradient(
     to bottom,
-    #125514,
-    #000000
+    #ffffff,
+    #ffffff
   ); /* Dégradé vert vers noir */
   --foreground: #ffffff; /* Blanc pour le texte */
 }
@@ -31,37 +31,32 @@ body {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
-/* Animation de gradient organique pour le background */
-@keyframes gradient-organic {
+/* Zone noire fixe dans le coin haut-gauche */
+.bg-dual-diagonal {
+  background: 
+    linear-gradient(135deg, 
+      #000000 0%, 
+      #000000 5%, 
+      #0f2112 12%, 
+      #1b391f 15%, 
+      #133117 20%, 
+      #0b1c0d 30%, 
+      #0a180b 50%
+    );
+}
+
+/* Animation de translation continue du dégradé */
+@keyframes diagonal-flow {
   0% {
-    background-position: 0% 20%;
-  }
-  15% {
-    background-position: 80% 40%;
-  }
-  30% {
-    background-position: 30% 80%;
-  }
-  45% {
-    background-position: 70% 10%;
-  }
-  60% {
-    background-position: 20% 60%;
-  }
-  75% {
-    background-position: 90% 30%;
-  }
-  90% {
-    background-position: 40% 90%;
+    background-position: 0% 0%;
   }
   100% {
-    background-position: 0% 20%;
+    background-position: 100% 100%;
   }
 }
 
 .animate-gradient-x {
-  animation: gradient-organic 20s ease-in-out infinite;
-  background-size: 300% 300%;
+  animation: diagonal-flow 8s linear infinite;
 }
 
 /* Animation de scroll pour le carrousel de témoignages */
@@ -75,7 +70,7 @@ body {
 }
 
 .animate-scroll-left {
-  animation: scroll-left 25s linear infinite;
+  animation: scroll-left 10s linear infinite;
   width: calc(320px * 10 + 32px * 10);
 }
 
