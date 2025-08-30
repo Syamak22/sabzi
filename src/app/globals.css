@@ -31,33 +31,35 @@ body {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
-/* Zone noire fixe dans le coin haut-gauche */
+/* Dégradé double diagonal miroir - tons verts foncés */
 .bg-dual-diagonal {
-  background: 
-    linear-gradient(135deg, 
-      #000000 0%, 
-      #000000 5%, 
-      #0f2112 12%, 
-      #1b391f 15%, 
-      #133117 20%, 
-      #0b1c0d 30%, 
-      #0a180b 50%
-    );
-  background-size: 300% 300%;
+  background-image: 
+    linear-gradient(135deg, #000000 0%, #0f2112 50%),
+    linear-gradient(315deg, #000000 0%, #0f2112 50%);
+  background-size: 300% 300%, 300% 300%;
 }
 
-/* Animation de translation continue du dégradé */
-@keyframes diagonal-flow {
+/* Animation simultanée des deux coins miroirs */
+@keyframes gradient-organic {
   0% {
-    background-position: 0% 0%;
+    background-position: 0% 0%, 100% 100%;
+  }
+  25% {
+    background-position: 50% 50%, 50% 50%;
+  }
+  50% {
+    background-position: 100% 100%, 0% 0%;
+  }
+  75% {
+    background-position: 50% 50%, 50% 50%;
   }
   100% {
-    background-position: 100% 100%;
+    background-position: 0% 0%, 100% 100%;
   }
 }
 
 .animate-gradient-x {
-  animation: diagonal-flow 6s ease-in-out infinite;
+  animation: gradient-organic 10s ease-in-out infinite;
 }
 
 /* Animation de scroll pour le carrousel de témoignages */
