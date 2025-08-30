@@ -4,21 +4,26 @@ export default function ProcessSection() {
       number: "01",
       title: "ECOUTE",
       description:
-        "On vous aide à remettre en perspective vos processus. On vous apporte une vision neuve et objective.",
-      icon: "👂",
+        `Nous comprenons vos processus.
+        
+        Au besoin nous vous aidons à les remettre en perspective avec une vision nouvelle et objective.`,
+      icon: "d",
     },
     {
       number: "02",
       title: "CONSEIL",
       description:
-        "On vous présente ce qui existe sur le marché ce qui est possible de faire.",
+        `Nous vous présentons tout ce qui est possible de faire en matière de technologie et digital.
+        
+        Solution existante et/ou sur mesure.`,
       icon: "💡",
     },
     {
       number: "03",
       title: "PLANS D'ACTION",
       description:
-        "On vous propose un plan concret, planning, cahier des charges et les différents livrables.",
+        `Nous vous proposons un plan concret : 
+        cahier des charges, planning, investissement et les différents livrables.`,
       icon: "📋",
     },
     {
@@ -42,7 +47,7 @@ export default function ProcessSection() {
         {/* Grille des étapes */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {processSteps.map((step, index) => (
-            <div key={index} className="relative group">
+            <div key={index} className="relative group ">
               {/* Connecteur entre les étapes (masqué sur mobile) */}
               {index < processSteps.length - 1 && (
                 <div className="hidden lg:block absolute top-12 -right-4 w-8 h-0.5 bg-white/30 z-0"></div>
@@ -64,7 +69,7 @@ export default function ProcessSection() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-white/90 font-inter leading-relaxed text-sm flex-1">
+                <p className="text-white/90 font-inter leading-relaxed text-sm flex-1 whitespace-pre-line">
                   {step.description}
                 </p>
               </div>

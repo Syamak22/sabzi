@@ -27,7 +27,7 @@ export default function Header() {
         </div>
 
         {/* Liens réseaux sociaux à droite */}
-        <div className="flex items-center space-x-6 absolute right-0">
+        <div className="flex items-center space-x-2 absolute right-0 sm:space-x-4">
           <a
             href="https://www.linkedin.com/in/syamakazadeh"
             target="_blank"
