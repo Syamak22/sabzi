@@ -18,8 +18,7 @@ export default function VideoSection() {
           Découvrez notre approche
         </h2>
         <h3 className="text-white/80 font-inter whitespace-normal mx-auto mb-12 text-xl">
-          Comment nous accompagnons les entrepreneurs dans leur transformation
-          digitale grâce à nos solutions sur-mesure.
+          {`Comment nous accompagnons les entrepreneurs de la construction à s'approprier la tech et l'IA grâce à nos solutions sur-mesure`}
         </h3>
 
         {/* Container vidéo */}

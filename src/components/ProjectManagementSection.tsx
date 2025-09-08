@@ -41,7 +41,7 @@ export default function ProjectManagementSection() {
         {/* Titre et sous-titre */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-arvo text-white mb-6">
-            Une approche 100% sur-mesure
+            100% sur-mesure, 100% disponible, 100% à votre écoute
           </h2>
           <p className="text-xl md:text-2xl font-inter text-white/90 max-w-4xl mx-auto leading-relaxed">
             Aucune solution proposée sans avoir rencontré vos équipes

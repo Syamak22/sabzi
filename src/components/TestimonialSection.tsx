@@ -1,3 +1,5 @@
+import CTAButton from "./CTAButton";
+
 export default function TestimonialSection() {
   const testimonials = [
     {
@@ -123,11 +125,9 @@ export default function TestimonialSection() {
           </div>
         </div>
 
-        {/* CTA section */}
-        <div className="text-center mt-16">
-          <button className="bg-white text-[#125514] px-8 py-4 rounded-full font-inter font-semibold hover:bg-white/90 transition-colors duration-300 shadow-lg hover:shadow-xl">
-            Demander une démo gratuite
-          </button>
+        {/* CTA Principal */}
+        <div className="mt-16">
+          <CTAButton />
         </div>
       </div>
     </section>

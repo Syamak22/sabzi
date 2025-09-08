@@ -5,6 +5,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import VideoSection from "@/components/VideoSection";
+import ExpectedResults from "@/components/ExpectedResults";
 import TestimonialSection from "@/components/TestimonialSection";
 import ProcessSection from "@/components/ProcessSection";
 import ProjectManagementSection from "@/components/ProjectManagementSection";
@@ -18,6 +19,9 @@ export default function Home() {
 
       {/* Section Hero avec H1, H2, H3, tag bulle et CTA */}
       <HeroSection />
+
+      {/* Section Résultats attendus */}
+      <ExpectedResults />
 
       {/* Section Vidéo de présentation */}
       <VideoSection />
