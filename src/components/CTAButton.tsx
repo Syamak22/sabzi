@@ -2,7 +2,7 @@ export default function CTAButton() {
   return (
     <div className="flex justify-center">
       <a
-        href="https://cal.com/syamak-azadeh-s/audit-offert"
+        href="https://cal.com/syamak-azadeh-s/sabzi-1er-rencontre"
         target="_blank"
         rel="noopener noreferrer"
         className="relative overflow-hidden bg-white text-[#0f2112] px-8 py-4 rounded-full text-lg font-inter font-semibold hover:bg-gray-100 transition-all duration-400 transform hover:scale-105 shadow-lg group inline-block"
