@@ -27,6 +27,11 @@ export default function HeroSection() {
           Logiciels spécifiques et automatisations conçus sur mesure
         </h2>
 
+        {/* H3 - inter */}
+        <h3 className="text-l md:text-xl lg:text-2xl font-arvo font-light text-white mb-8 leading-relaxed">
+          Votre unique allié et partenaire tech
+        </h3>
+
         {/* CTA Principal */}
         <CTAButton />
       </div>

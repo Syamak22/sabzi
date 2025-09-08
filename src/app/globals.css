@@ -30,6 +30,11 @@ h2 {
   font-weight: 600;
 }
 
+/* Tous les H2 en light */
+h1 {
+  font-weight: 400;
+}
+
 /* Dégradé double diagonal miroir - tons verts foncés */
 .bg-dual-diagonal {
   background-image: 
