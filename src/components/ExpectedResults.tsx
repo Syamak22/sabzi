@@ -9,19 +9,19 @@ export default function ExpectedResults() {
   const handleOpenCard = (index: number) => {
     setOpenCard(index);
     // Bloque le scroll de la page
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   };
 
   const handleCloseCard = () => {
     setOpenCard(null);
     // Remet le scroll de la page
-    document.body.style.overflow = 'unset';
+    document.body.style.overflow = "unset";
   };
 
   // Nettoie l'overflow lors du démontage du composant
   useEffect(() => {
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, []);
 
@@ -31,8 +31,7 @@ export default function ExpectedResults() {
       title: "Production",
       shortDescription:
         "Optimisation des processus de production et amélioration de l'efficacité opérationnelle",
-      fullDescription:
-        `Notre approche de production se concentre sur l'optimisation complète de vos processus métiers.
+      fullDescription: `Notre approche de production se concentre sur l'optimisation complète de vos processus métiers.
 
         Nous automatisons les tâches répétitives, connectons vos outils et centralisons vos données.
         
@@ -41,72 +40,72 @@ export default function ExpectedResults() {
       Chaque conduc ou chef de chantier peut consulter et saisir de la donnée sur sa tablette ou téléphone.`,
     },
     {
-      icon: "/production.png",
+      icon: "/rh.png",
       title: "Ressources Humaines",
       shortDescription:
         "Gestion simplifiée des équipes, salariés, pointages et automatisation des tâches administratives",
-      fullDescription:
-        `La digitalisation de vos ressources humaines transforme radicalement la gestion de vos équipes. 
+      fullDescription: `La digitalisation de vos ressources humaines transforme radicalement la gestion de vos équipes. 
 
         Nos solutions couvrent la planification intelligente des équipes, le suivi détaillé des compétences, la gestion automatisée des congés et la formation du personnel.
 
         Nous créons des portails RH intuitifs qui permettent à vos employés de gérer leurs demandes de manière autonome, tout en offrant aux managers des outils de pilotage avancés pour optimiser l'allocation des ressources.`,
-      example: "Exemple : Application mobile de pointage avec géolocalisation, validation par le conduc et export comptable CSV en 1 clique",
+      example:
+        "Exemple : Application mobile de pointage avec géolocalisation, validation par le conduc et export comptable CSV en 1 clique",
     },
     {
-      icon: "/production.png",
+      icon: "/communication.png",
       title: "Communication",
       shortDescription:
         "Amélioration de la communication interne avec vos collaborateurs et externe avec vos clients",
-      fullDescription:
-        `Une communication fluide est essentielle au succès de votre entreprise. 
+      fullDescription: `Une communication fluide est essentielle au succès de votre entreprise. 
         
         Nous mettons en place des systèmes de communication intégrés qui connectent tous vos collaborateurs, clients et partenaires.
         
         Ces solutions incluent des plateformes de messagerie unifiées, des systèmes de notifications automatiques intelligentes, et des outils de suivi des interactions client.
         L'objectif est de créer un écosystème communicationnel qui améliore la réactivité, réduit les malentendus et renforce les relations avec vos parties prenantes.`,
-      example: "Exemple : Portail client avec suivi temps réel des travaux, photos d'avancement et messagerie directe avec l'équipe terrain.",
+      example:
+        "Exemple : Portail client avec suivi temps réel des travaux, photos d'avancement et messagerie directe avec l'équipe terrain.",
     },
     {
-      icon: "/production.png",
+      icon: "/atelier.png",
       title: "Atelier, commandes, stocks",
       shortDescription:
         "Centralisation et automatisation de la gestion de votre atelier, des commandes et du stocks en temps réel",
-      fullDescription:
-        `Gestion centralisée de votre atelier, optimisation des commandes et suivi intelligent des stocks.
+      fullDescription: `Gestion centralisée de votre atelier, optimisation des commandes et suivi intelligent des stocks.
         
         Nous digitalisons la gestion de vos matériaux, automatisons les commandes fournisseurs et optimisons votre organisation d'atelier.
         
         Réduction des ruptures de stock, amélioration de la traçabilité et optimisation des coûts d'approvisionnement.`,
-      example: "Exemple : Système de scan pour traçabilité des matériaux avec commande automatique quand le niveau du stock atteint un seuil critique.",
+      example:
+        "Exemple : Système de scan pour traçabilité des matériaux avec commande automatique quand le niveau du stock atteint un seuil critique.",
     },
     {
       icon: "/production.png",
       title: "Sécurité, conformité, véhicules",
       shortDescription:
         "Gestion des obligations sociales et légales de votre entreprise",
-      fullDescription:
-        `La conformité réglementaire n'a jamais été aussi complexe. 
+      fullDescription: `La conformité réglementaire n'a jamais été aussi complexe. 
         
         Notre solution de gestion sociale et légale vous accompagne dans le respect de toutes vos obligations.
         
         Nous automatisons le suivi réglementaire, générons automatiquement les documents obligatoires, et vous alertons sur les échéances importantes. Pour les véhicules le suivi des controles techniques, révisions et gestion des amendes.
         
         Cette approche préventive vous protège des risques de non-conformité, optimise vos relations avec les organismes de contrôle et vous fait gagner un temps considérable dans la gestion administrative de votre entreprise.`,
-      example: "Exemple : Application de contrôle sécurité chantier avec photos géolocalisées et génération automatique des rapports de conformité.",
+      example:
+        "Exemple : Application de contrôle sécurité chantier avec photos géolocalisées et génération automatique des rapports de conformité.",
     },
     {
       icon: "/production.png",
       title: "Formation et connaissance tech",
       shortDescription:
         "Vous faire monter vous, et vos collaborateurs en compétences",
-      fullDescription:
-        `De nos jours, la technologie est un outil stratégique qui redéfinit votre entreprise.
+      fullDescription: `De nos jours, la technologie est un outil stratégique qui redéfinit votre entreprise.
         
         Nous vous accompagnons dans la dématérialisation complète de vos processus, la migration vers le cloud computing, et la modernisation de tous vos outils de travail tout en vous formant est expliquant les tenants et aboutissants.
         
         Notre monde est en constante évolution et nous proposons des ateliers de travail pour discuter sur les enjeux technologiques, sociaux et économique.`,
-      example: "Exemple : Quelle est la différence entre avoir votre porpre serveur en interne et/ou tout mettre sur un serveur cloud. Comprendre les outils et logiciels disponibles en ligne associés à votre expertise. Comment gérer vos mot de passe, et utiliser un gestionnaire de mot de passe. Sensibiliser vos équipes à l'IA et savoir distinguer une fake news.",
+      example:
+        "Exemple : Quelle est la différence entre avoir votre porpre serveur en interne et/ou tout mettre sur un serveur cloud. Comprendre les outils et logiciels disponibles en ligne associés à votre expertise. Comment gérer vos mot de passe, et utiliser un gestionnaire de mot de passe. Sensibiliser vos équipes à l'IA et savoir distinguer une fake news.",
     },
   ];
 
@@ -163,8 +162,8 @@ export default function ExpectedResults() {
           {/* Titre de la section */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-arvo text-white mb-6">
-              Découvrez les améliorations concrètes que nos solutions apportent
-              à votre entreprise
+              Découvrez les résultats concrets que notre partenariat apporte à
+              votre entreprise
             </h2>
           </div>
 
@@ -175,13 +174,13 @@ export default function ExpectedResults() {
                 {/* Card du résultat */}
                 <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 transform hover:scale-105 min-h-[320px] flex flex-col items-center text-center">
                   {/* Icône SVG */}
-                  <div className="mb-4 flex-shrink-0">
+                  <div className="mb-4 flex-shrink-0 h-32 flex items-center justify-center">
                     <Image
                       src={result.icon}
                       alt={result.title}
-                      width={120}
-                      height={120}
-                      className="mx-auto object-contain"
+                      width={200}
+                      height={200}
+                      className="max-h-32 w-auto object-contain rounded-xl"
                     />
                   </div>
 
@@ -280,9 +279,9 @@ export default function ExpectedResults() {
                           <Image
                             src={result.icon}
                             alt={result.title}
-                            width={400}
-                            height={400}
-                            className="mx-auto object-contain transition-transform duration-500 ease-out"
+                            width={900}
+                            height={900}
+                            className="mx-auto object-contain transition-transform duration-500 ease-out rounded-2xl"
                           />
                         </div>
                       </div>
