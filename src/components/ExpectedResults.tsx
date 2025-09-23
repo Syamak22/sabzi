@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 
 export default function ExpectedResults() {
   const [openCard, setOpenCard] = useState<number | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const handleOpenCard = (index: number) => {
     setOpenCard(index);
@@ -18,6 +19,16 @@ export default function ExpectedResults() {
     document.body.style.overflow = "unset";
   };
 
+  const handleImageClick = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+    document.body.style.overflow = "hidden";
+  };
+
+  const handleCloseImage = () => {
+    setSelectedImage(null);
+    document.body.style.overflow = "unset";
+  };
+
   // Nettoie l'overflow lors du démontage du composant
   useEffect(() => {
     return () => {
@@ -27,9 +38,14 @@ export default function ExpectedResults() {
 
   const results = [
     {
-      icon: "/production.png",
-      icons: ["/production.png"], // Peut contenir plusieurs images
+      icon: "/equipes.png",
+      icons: ["/equipes.png","/plan_tvx.png"], // Peut contenir plusieurs images
       title: "Production",
+      tags: [
+        "Gagner 5h par semaine",
+        "ROI visible dès 30 jours",
+        "Réduction erreurs de 80%",
+      ],
       shortDescription:
         "Optimisation des processus de production et amélioration de l'efficacité opérationnelle",
       fullDescription: `Notre approche de production se concentre sur l'optimisation complète de vos processus métiers.
@@ -43,7 +59,12 @@ export default function ExpectedResults() {
     {
       icon: "/rh.png",
       icons: ["/rh.png", "/personnel.png"], // Exemple avec 2 images
-      title: "Ressources Humaines",
+      title: "Ressources humaines",
+      tags: [
+        "Économiser 3h d'admin par semaine",
+        "Zéro oubli de pointage",
+        "Export comptable en 1 clic",
+      ],
       shortDescription:
         "Gestion simplifiée des équipes, salariés, pointages et automatisation des tâches administratives",
       fullDescription: `La digitalisation de vos ressources humaines transforme radicalement la gestion de vos équipes. 
@@ -58,6 +79,11 @@ export default function ExpectedResults() {
       icon: "/communication.png",
       icons: ["/communication.png"],
       title: "Communication",
+      tags: [
+        "Clients satisfaits +40%",
+        "Temps de réponse divisé par 3",
+        "Suivi temps réel",
+      ],
       shortDescription:
         "Amélioration de la communication interne avec vos collaborateurs et externe avec vos clients",
       fullDescription: `Une communication fluide est essentielle au succès de votre entreprise. 
@@ -73,6 +99,11 @@ export default function ExpectedResults() {
       icon: "/atelier.png",
       icons: ["/atelier.png", "/atelier2.png"], // Exemple avec 2 images
       title: "Atelier, commandes, stocks",
+      tags: [
+        "Zéro rupture de stock",
+        "Traçabilité complète",
+        "Commandes automatiques",
+      ],
       shortDescription:
         "Centralisation et automatisation de la gestion de votre atelier, des commandes et du stocks en temps réel",
       fullDescription: `Gestion centralisée de votre atelier, optimisation des commandes et suivi intelligent des stocks.
@@ -84,9 +115,10 @@ export default function ExpectedResults() {
         "Exemple : Système de scan pour traçabilité des matériaux avec commande automatique quand le niveau du stock atteint un seuil critique.",
     },
     {
-      icon: "/production.png",
-      icons: ["/production.png"],
+      icon: "/vehicule1.png",
+      icons: ["/vehicule1.png","/vehicule2.png"],
       title: "Sécurité, conformité, véhicules",
+      tags: ["Conformité garantie", "Rapports auto", "Alertes échéances"],
       shortDescription:
         "Gestion des obligations sociales et légales de votre entreprise",
       fullDescription: `La conformité réglementaire n'a jamais été aussi complexe. 
@@ -97,12 +129,13 @@ export default function ExpectedResults() {
         
         Cette approche préventive vous protège des risques de non-conformité, optimise vos relations avec les organismes de contrôle et vous fait gagner un temps considérable dans la gestion administrative de votre entreprise.`,
       example:
-        "Exemple : Application de contrôle sécurité chantier avec photos géolocalisées et génération automatique des rapports de conformité.",
+        "Exemple : gestion et visuel complet de votre flotte de véhicule. Contrôle technique, révision, contrôle de l'état",
     },
     {
       icon: "/production.png",
       icons: ["/production.png"],
       title: "Formation et connaissance tech",
+      tags: ["Équipes autonomes", "Productivité +25%", "Maîtrise des outils"],
       shortDescription:
         "Vous faire monter vous, et vos collaborateurs en compétences",
       fullDescription: `De nos jours, la technologie est un outil stratégique qui redéfinit votre entreprise.
@@ -174,54 +207,72 @@ export default function ExpectedResults() {
           </div>
 
           {/* Grille des résultats */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="space-y-8">
             {results.map((result, index) => (
               <div key={index} className="relative group">
-                {/* Card du résultat */}
-                <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 transform hover:scale-105 h-[380px] flex flex-col items-center text-center">
-                  {/* Icône SVG */}
-                  <div className="mb-4 flex-shrink-0 h-32 flex items-center justify-center">
-                    <Image
-                      src={result.icon}
-                      alt={result.title}
-                      width={200}
-                      height={200}
-                      className="max-h-32 w-auto object-contain rounded-xl"
-                    />
-                  </div>
-
-                  {/* Titre */}
-                  <h3 className="heading-3">
-                    {result.title}
-                  </h3>
-
-                  {/* Description courte */}
-                  <p className="text-white/90 font-inter leading-relaxed text-xs md:text-sm flex-1 line-clamp-3 mb-4">
-                    {result.shortDescription}
-                  </p>
-
-                  {/* Bouton Agrandir */}
-                  <button
-                    onClick={() => handleOpenCard(index)}
-                    className="mt-auto inline-flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 border border-white/30 rounded-lg text-white text-sm font-medium transition-all duration-200 hover:scale-105 cursor-pointer"
-                  >
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M15 3H21V9M14 10L20.2 3.8M9 21H3V15M10 14L3.8 20.2"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                {/* Card du résultat - Format horizontal */}
+                <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 transform hover:scale-[1.02]">
+                  <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center lg:items-start ">
+                    {/* Image agrandie */}
+                    <div className="flex-shrink-0 w-full lg:w-[500px] h-72 lg:h-80 flex items-center justify-center relative">
+                      <Image
+                        src={result.icon}
+                        alt={result.title}
+                        width={500}
+                        height={400}
+                        className="w-full h-full object-contain rounded-3xl"
                       />
-                    </svg>
-                    Agrandir le détail
-                  </button>
+                    </div>
+
+                    {/* Contenu textuel */}
+                    <div className="flex-1 flex flex-col text-center lg:text-left">
+                      {/* Titre */}
+                      <h3 className="heading-3 mb-4">{result.title}</h3>
+
+                      {/* Description courte */}
+                      <p className="text-white/90 font-inter leading-relaxed text-sm md:text-base mb-6">
+                        {result.shortDescription}
+                      </p>
+                      
+                      {/* Tags de résultats concrets */}
+                      {result.tags && (
+                        <div className="flex flex-wrap gap-2 mb-6 justify-center lg:justify-start">
+                          {result.tags.map((tag, tagIndex) => (
+                            <span
+                              key={tagIndex}
+                              className="inline-block bg-green-500/20 border border-green-400/30 text-green-300 text-xs px-3 py-2 rounded-full font-medium"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
+                    </div>
+                    
+                    {/* Bouton Agrandir en bas à droite */}
+                    <button
+                      onClick={() => handleOpenCard(index)}
+                      className="absolute bottom-10 right-10 inline-flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 border border-white/30 rounded-lg text-white text-sm font-medium transition-all duration-200 hover:scale-105 cursor-pointer"
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M15 3H21V9M14 10L20.2 3.8M9 21H3V15M10 14L3.8 20.2"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      Voir un exemple
+                    </button>
+                  </div>
                 </div>
 
                 {/* Modal/Overlay au clic */}
@@ -282,32 +333,50 @@ export default function ExpectedResults() {
                           {result.example}
                         </p>
 
+                        {/* Info pour agrandir */}
+                        <div className="mb-4 text-center">
+                          <p className="text-white/60 text-sm italic">
+                            💡 Cliquez sur les images pour les agrandir et voir plus de détails
+                          </p>
+                        </div>
+
                         {/* Images agrandies */}
                         <div className="mb-6">
                           {result.icons && result.icons.length > 1 ? (
-                            // Affichage en grille pour plusieurs images
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+                            // Affichage empilé pour plusieurs images
+                            <div className="space-y-6 max-w-5xl mx-auto">
                               {result.icons.map((iconSrc, iconIndex) => (
-                                <div key={iconIndex} className="w-full">
+                                <div
+                                  key={iconIndex}
+                                  className="w-full overflow-hidden rounded-2xl"
+                                >
                                   <Image
                                     src={iconSrc}
                                     alt={`${result.title} ${iconIndex + 1}`}
-                                    width={600}
-                                    height={600}
-                                    className="w-full object-contain transition-transform duration-500 ease-out rounded-2xl"
+                                    width={1000}
+                                    height={700}
+                                    className="w-full object-contain transition-transform duration-300 ease-out rounded-2xl hover:scale-105 cursor-pointer"
+                                    onClick={() => handleImageClick(iconSrc)}
                                   />
                                 </div>
                               ))}
                             </div>
                           ) : (
                             // Affichage unique pour une seule image
-                            <Image
-                              src={result.icons?.[0] || result.icon}
-                              alt={result.title}
-                              width={900}
-                              height={900}
-                              className="mx-auto object-contain transition-transform duration-500 ease-out rounded-2xl"
-                            />
+                            <div className="overflow-hidden rounded-2xl max-w-5xl mx-auto">
+                              <Image
+                                src={result.icons?.[0] || result.icon}
+                                alt={result.title}
+                                width={1000}
+                                height={700}
+                                className="w-full object-contain transition-transform duration-300 ease-out rounded-2xl hover:scale-105 cursor-pointer"
+                                onClick={() =>
+                                  handleImageClick(
+                                    result.icons?.[0] || result.icon
+                                  )
+                                }
+                              />
+                            </div>
                           )}
                         </div>
                       </div>
@@ -319,6 +388,48 @@ export default function ExpectedResults() {
           </div>
         </div>
       </section>
+
+      {/* Lightbox pour affichage d'image en grand */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black/90 backdrop-blur-md z-[60] flex items-center justify-center p-4"
+          onClick={handleCloseImage}
+        >
+          <div className="relative max-w-[95vw] max-h-[95vh]">
+            {/* Bouton Fermer */}
+            <button
+              onClick={handleCloseImage}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
+            >
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18 6L6 18M6 6L18 18"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+
+            {/* Image en grand */}
+            <Image
+              src={selectedImage}
+              alt="Image agrandie"
+              width={1200}
+              height={900}
+              className="max-w-full max-h-full object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }

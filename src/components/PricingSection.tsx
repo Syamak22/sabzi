@@ -21,12 +21,12 @@ export default function PricingSection() {
             {/* Contenu principal */}
             <div className="space-y-10">
               <h2 className="heading-2">
-                Logiciels, automatisation et IA sur mesures
+                Logiciels, automatisations et IA sur mesures
               </h2>
 
               {/* Prix principal */}
               <div className="text-4xl md:text-5xl font-arvo font-bold text-white">
-                À partir de <span className="text-white">5500€</span>
+                À partir de <span className="text-white">4990€</span>
               </div>
 
               {/* Détails */}

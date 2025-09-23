@@ -24,7 +24,7 @@ export default function ProjectManagementSection() {
     {
       step: 5,
       title:
-        "On démarre tout petit, 1 fonctionnalités prioritaires en 15 jours. Testée par toutes les parties prenantes",
+        "On démarre simple, 1 à 2 fonctionnalités prioritaires en 15 jours. Testées et validées par toutes les parties prenantes",
       icon: "🚀",
     },
     {
