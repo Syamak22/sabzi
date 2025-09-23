@@ -25,14 +25,113 @@ body {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
-/* Tous les H2 en bold */
-h2 {
-  font-weight: 600;
+/* Classes standardisées pour les titres - Hiérarchie cohérente */
+
+/* H1 - Titres principaux des sections */
+.heading-1 {
+  font-size: 1.875rem;
+  font-family: var(--font-arvo), serif;
+  font-weight: 400;
+  color: white;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
 }
 
-/* Tous les H2 en light */
+@media (min-width: 768px) {
+  .heading-1 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-1 {
+    font-size: 3rem;
+  }
+}
+
+/* H2 - Sous-titres des sections */  
+.heading-2 {
+  font-size: 1.5rem;
+  font-family: var(--font-arvo), serif;
+  font-weight: 600;
+  color: white;
+  line-height: 1.625;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .heading-2 {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-2 {
+    font-size: 2.25rem;
+  }
+}
+
+/* H3 - Titres de cartes et sous-sections */
+.heading-3 {
+  font-size: 1.25rem;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  color: white;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .heading-3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* H4 - Petits titres */
+.heading-4 {
+  font-size: 1.125rem;
+  font-family: var(--font-arvo), serif;
+  font-weight: 500;
+  color: white;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .heading-4 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Texte de description principal */
+.text-description {
+  font-size: 1.125rem;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.625;
+}
+
+@media (min-width: 768px) {
+  .text-description {
+    font-size: 1.25rem;
+  }
+}
+
+/* Texte de description secondaire */
+.text-subdescription {
+  font-size: 1rem;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.625;
+}
+
+/* Ancien code pour compatibilité */
 h1 {
   font-weight: 400;
+}
+
+h2 {
+  font-weight: 600;
 }
 
 /* Dégradé double diagonal miroir - tons verts foncés */

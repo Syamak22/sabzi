@@ -6,7 +6,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-center relative">
         {/* Logo au centre */}
         <div className="flex items-center">
-          <h1 className="text-2xl font-bold text-white font-arvo leading-relaxed">
+          <h1 className="heading-3">
             {/* Logo mobile */}
             <Image
               src="/logo_blanc.png"

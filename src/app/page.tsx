@@ -57,7 +57,7 @@ export default function Home() {
           {/* Contact */}
           <div className="mb-8">
             <p className="text-white/90 font-inter">
-              📧 contact@syamakazadeh.com | 📞 +33 6 75 45 30 07
+              📧 pro@syamakazadeh.com | 📞 +33 6 75 45 30 07
             </p>
           </div>
 

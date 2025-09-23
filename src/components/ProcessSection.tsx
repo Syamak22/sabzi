@@ -49,7 +49,7 @@ export default function ProcessSection() {
       <div className="max-w-7xl mx-auto">
         {/* Titre de la section */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-arvo text-white mb-6">
+          <h2 className="heading-2">
             Notre Méthode
           </h2>
         </div>
@@ -85,7 +85,7 @@ export default function ProcessSection() {
                 </div>
 
                 {/* Titre */}
-                <h3 className="text-xl font-inter font-bold text-white mb-4">
+                <h3 className="heading-3 mb-4">
                   {step.title}
                 </h3>
 

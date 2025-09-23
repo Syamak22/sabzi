@@ -14,13 +14,13 @@ export default function PricingSection() {
             {/* Badge en haut */}
             <div className="mb-6 flex justify-center">
               <div className="bg-white text-[#125514] px-4 py-2 rounded-full text-sm font-inter font-semibold">
-                💰 Tarification transparente, 0 avance, vous payez à réception
+                💰 Tarification transparente
               </div>
             </div>
 
             {/* Contenu principal */}
             <div className="space-y-10">
-              <h2 className="text-2xl md:text-3xl font-arvo text-white leading-relaxed">
+              <h2 className="heading-2">
                 Logiciels, automatisation et IA sur mesures
               </h2>
 
@@ -30,10 +30,10 @@ export default function PricingSection() {
               </div>
 
               {/* Détails */}
-              <div className="space-y-4 text-lg md:text-xl font-inter text-white/90">
+              <div className="space-y-4 text-description">
                 <p>
                   <span className="inline-block bg-white/10 px-3 py-1 rounded-full text-base">
-                    15 jours de développement
+                    15 jours de développement min
                   </span>
                 </p>
                 <p>Livrable défini avant de commencer</p>

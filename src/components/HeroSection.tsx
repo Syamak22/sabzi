@@ -12,28 +12,37 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="py-15 px-6 sm:py-30">
+    <section className="py-12 px-6 lg:py-20">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Colonne de gauche - Contenu Hero */}
-          <div className="text-center lg:text-left">
-            {/* H1 - Arvo Regular */}
-            <h1 className="text-4xl md:text-6xl lg:text-5xl xl:text-6xl font-arvo font-normal text-white mb-8 leading-extratight">
-              <span className="px-2 mr-2 py-1 rounded-lg font-bold italic">
-                Agence Tech & IA
-              </span>
-              dédiée aux entreprises de la construction
+          <div className="text-center lg:text-left space-y-6">
+            {/* Badge secteur */}
+            <div className="mb-4 flex justify-center lg:justify-start">
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
+                <span className="text-sm">🏗️</span>
+                <span className="text-white text-sm font-inter font-medium">
+                  Entreprises de la construction
+                </span>
+              </div>
+            </div>
+
+            {/* H1 - Titre principal */}
+            <h1 className="heading-1">
+              <span className="font-bold italic">Sécurisez</span> vos marges<br />
+              <span className="font-bold italic">Optimisez</span> vos planning<br />
+              <span className="font-bold italic">Facilitez</span> la gestion de vos équipes
             </h1>
 
-            {/* H2 - Arvo Regular */}
-            <h2 className="text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-arvo font-normal text-white mb-8 leading-relaxed">
-              Logiciels spécifiques et automatisations conçus sur mesure
-            </h2>
+            {/* Description principale */}
+            <p className="text-description max-w-lg">
+              Automatisations et logiciels spécifiques qui s&apos;adaptent à vos process
+            </p>
 
-            {/* H3 - inter */}
-            <h3 className="text-l md:text-xl lg:text-lg xl:text-xl font-arvo font-light text-white mb-8 leading-relaxed">
-              Votre unique allié et partenaire tech
-            </h3>
+            {/* Sous-titre */}
+            <p className="text-subdescription">
+              Intervention directe dans vos locaux pour un accompagnement personnalisé
+            </p>
 
             {/* CTA Principal */}
             <CTAButton />
@@ -82,11 +91,11 @@ export default function HeroSection() {
             
             {/* Texte sous la vidéo */}
             <div className="text-center lg:text-left">
-              <h4 className="text-xl md:text-2xl font-arvo text-white mb-3">
-                Découvrez notre approche
+              <h4 className="heading-4">
+                Notre approche
               </h4>
-              <p className="text-white/80 font-inter text-sm md:text-base leading-relaxed">
-                Comment nous accompagnons les entrepreneurs de la construction à s&apos;approprier la tech et l&apos;IA grâce à nos solutions sur-mesure
+              <p className="text-subdescription text-sm">
+                Comment nous accompagnons les entrepreneurs de la construction à s&apos;approprier la tech et l&apos;IA grâce à nos solutions sur-mesure.
               </p>
             </div>
           </div>

@@ -39,10 +39,10 @@ export default function TestimonialSection() {
       <div className="max-w-6xl mx-auto">
         {/* Titre de la section */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-arvo text-white mb-4">
+          <h2 className="heading-2">
             Ils nous font confiance
           </h2>
-          <p className="text-white/80 font-inter text-lg max-w-2xl mx-auto">
+          <p className="text-description max-w-2xl mx-auto">
             Découvrez comment nos clients du secteur de la construction ont
             transformé leur activité avec nos solutions sur-mesure.
           </p>
