@@ -101,7 +101,7 @@ export default function ProcessSection() {
         {/* Bouton vidéo centralisé pour toute la méthode */}
         <div className="text-center mt-16">
           <button
-            onClick={() => handleVideoClick("https://www.youtube.com")}
+            onClick={() => handleVideoClick("https://cal.com/syamak-azadeh-s/sabzi-1er-rencontre")}
             className="inline-flex items-center gap-3 px-8 py-4 bg-white/20 hover:bg-white/30 border border-white/30 rounded-xl text-white text-lg font-medium transition-all duration-300 hover:scale-105 cursor-pointer shadow-lg"
           >
             <svg
