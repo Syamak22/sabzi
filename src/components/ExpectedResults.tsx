@@ -220,7 +220,7 @@ export default function ExpectedResults() {
                         alt={result.title}
                         width={500}
                         height={400}
-                        className="w-full h-full object-contain rounded-3xl"
+                        className="w-full h-full object-contain"
                       />
                     </div>
 

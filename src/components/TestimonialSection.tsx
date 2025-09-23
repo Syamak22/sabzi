@@ -91,7 +91,7 @@ C'est une vraie force pour tout projet !`,
 
             {/* Témoignage principal */}
             <blockquote className="text-white/90 font-inter text-lg md:text-xl leading-relaxed text-center mb-8 italic">
-              "{testimonials[0].text}"
+              &quot;{testimonials[0].text}&quot;
             </blockquote>
 
             {/* Nom et entreprise */}
