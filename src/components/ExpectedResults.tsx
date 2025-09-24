@@ -211,7 +211,7 @@ export default function ExpectedResults() {
             {results.map((result, index) => (
               <div key={index} className="relative group">
                 {/* Card du résultat - Format horizontal */}
-                <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 transform hover:scale-[1.02]">
+                <div className="relative- bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 transform hover:scale-[1.03] max-w-[95vh] mx-auto">
                   <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center lg:items-start ">
                     {/* Image agrandie */}
                     <div className="flex-shrink-0 w-full lg:w-[500px] h-72 lg:h-80 flex items-center justify-center relative">
@@ -233,7 +233,7 @@ export default function ExpectedResults() {
                       <p className="text-white/90 font-inter leading-relaxed text-sm md:text-base mb-6">
                         {result.shortDescription}
                       </p>
-                      
+
                       {/* Tags de résultats concrets */}
                       {result.tags && (
                         <div className="flex flex-wrap gap-2 mb-6 justify-center lg:justify-start">
@@ -248,12 +248,37 @@ export default function ExpectedResults() {
                         </div>
                       )}
 
+                      {/* Bouton Agrandir - sous les tags sur mobile uniquement */}
+                      <div className="flex justify-center lg:hidden">
+                        <button
+                          onClick={() => handleOpenCard(index)}
+                          className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 border border-white/30 rounded-lg text-white text-sm font-medium transition-all duration-200 hover:scale-105 cursor-pointer"
+                        >
+                          <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M15 3H21V9M14 10L20.2 3.8M9 21H3V15M10 14L3.8 20.2"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                          Voir un exemple
+                        </button>
+                      </div>
+
                     </div>
-                    
-                    {/* Bouton Agrandir en bas à droite */}
+
+                    {/* Bouton Agrandir en position absolue uniquement sur grand écran */}
                     <button
                       onClick={() => handleOpenCard(index)}
-                      className="absolute bottom-10 right-10 inline-flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 border border-white/30 rounded-lg text-white text-sm font-medium transition-all duration-200 hover:scale-105 cursor-pointer"
+                      className="hidden lg:inline-flex absolute bottom-10 right-10 items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 border border-white/30 rounded-lg text-white text-sm font-medium transition-all duration-200 hover:scale-105 cursor-pointer"
                     >
                       <svg
                         width="16"
