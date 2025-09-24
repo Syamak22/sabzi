@@ -1,5 +1,6 @@
 // Landing page Sabzi - Agence Tech Charpentiers & Menuisiers
 // Logiciels spécifiques, automatisation et IA sur-mesure
+"use client"
 
 import Image from "next/image";
 import Header from "@/components/Header";
@@ -10,9 +11,11 @@ import ProcessSection from "@/components/ProcessSection";
 import ProjectManagementSection from "@/components/ProjectManagementSection";
 import PricingSection from "@/components/PricingSection";
 
+
 export default function Home() {
   return (
     <div className="min-h-screen animate-gradient-x bg-dual-diagonal">
+   
       {/* Header avec logo et liens sociaux */}
       <Header />
 

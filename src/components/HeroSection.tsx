@@ -5,10 +5,11 @@ import CTAButton from "./CTAButton";
 
 export default function HeroSection() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoId = "M53hAzK9sbM";
+  const videoId = "OvlhsVOPSTM";
 
   const getThumbnail = (videoId: string) => {
-    return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+    // Pour les Shorts, utilise la meilleure qualité disponible
+    return `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
   };
 
   return (
@@ -29,29 +30,34 @@ export default function HeroSection() {
 
             {/* H1 - Titre principal */}
             <h1 className="heading-1">
-              <span className="font-bold italic">Sécurisez</span> vos marges<br />
-              <span className="font-bold italic">Optimisez</span> vos planning<br />
-              <span className="font-bold italic">Facilitez</span> la gestion de vos équipes
+              <span className="font-bold italic">Sécurisez</span> vos marges
+              <br />
+              <span className="font-bold italic">Optimisez</span> vos planning
+              <br />
+              <span className="font-bold italic">Facilitez</span> la gestion de
+              vos équipes
             </h1>
 
             {/* Description principale */}
-            <p className="text-description max-w-lg">
-              Automatisations et logiciels spécifiques qui s&apos;adaptent à vos process
+            <p className="text-description max-w-lg mx-auto lg:mx-0">
+              Automatisations et logiciels spécifiques qui s&apos;adaptent à vos
+              process
             </p>
 
             {/* Sous-titre */}
             <p className="text-subdescription">
-              Intervention directe dans vos locaux pour un accompagnement personnalisé
+              Intervention directe dans vos locaux pour un accompagnement
+              personnalisé
             </p>
 
             {/* CTA Principal */}
             <CTAButton />
           </div>
 
-          {/* Colonne de droite - Vidéo */}
-          <div className="space-y-6">
-            <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden">
-              <div className="aspect-video flex items-center justify-center relative">
+          {/* Colonne de droite - Vidéo Shorts */}
+          <div className="space-y-6 flex flex-col items-center">
+            <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden w-full max-w-md lg:max-w-lg">
+              <div className="aspect-[9/16] flex items-center justify-center relative">
                 {!isPlaying ? (
                   // Miniature avec bouton play
                   <div
@@ -78,24 +84,25 @@ export default function HeroSection() {
                     </div>
                   </div>
                 ) : (
-                  // Iframe YouTube
+                  // Iframe YouTube Shorts
                   <iframe
-                    src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+                    src={`https://www.youtube.com/embed/${videoId}?autoplay=1&quality=hd1080&vq=hd1080`}
                     className="w-full h-full"
                     allow="autoplay; encrypted-media"
                     allowFullScreen
+                    loading="lazy"
                   />
                 )}
               </div>
             </div>
-            
+
             {/* Texte sous la vidéo */}
             <div className="text-center lg:text-left">
-              <h4 className="heading-4">
-                Notre approche
-              </h4>
+              <h4 className="heading-4">Notre approche</h4>
               <p className="text-subdescription text-sm">
-                Comment nous accompagnons les entrepreneurs de la construction à s&apos;approprier la tech et l&apos;IA grâce à nos solutions sur-mesure.
+                Comment nous accompagnons les entrepreneurs de la construction à
+                s&apos;approprier la tech et l&apos;IA grâce à nos solutions
+                sur-mesure.
               </p>
             </div>
           </div>
