@@ -26,7 +26,7 @@ export default function PricingSection() {
 
               {/* Prix principal */}
               <div className="text-4xl md:text-5xl font-arvo font-bold text-white">
-                À partir de <span className="text-white">4990€</span>
+                À partir de <span className="text-white">1990€</span>
               </div>
 
               {/* Détails */}
