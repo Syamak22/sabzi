@@ -10,12 +10,18 @@ import TestimonialSection from "@/components/TestimonialSection";
 import ProcessSection from "@/components/ProcessSection";
 import ProjectManagementSection from "@/components/ProjectManagementSection";
 import PricingSection from "@/components/PricingSection";
+import ThreeBackground from "@/components/ThreeBackground";
 
 
 export default function Home() {
   return (
-    <div className="min-h-screen animate-gradient-x bg-dual-diagonal">
-   
+    <div className="min-h-screen relative">
+      {/* Three.js Animated Background */}
+      <ThreeBackground />
+
+      {/* Gradient overlay for depth */}
+      <div className="fixed inset-0 -z-5 bg-gradient-to-br from-black/80 via-[#0f2112]/60 to-black/80 pointer-events-none" />
+
       {/* Header avec logo et liens sociaux */}
       <Header />
 
