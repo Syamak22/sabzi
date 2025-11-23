@@ -225,12 +225,12 @@ export default function ExpectedResults() {
                     </div>
 
                     {/* Contenu textuel */}
-                    <div className="flex-1 flex flex-col text-center lg:text-left">
+                    <div className="flex-1 flex flex-col text-center lg:text-left lg:pb-16">
                       {/* Titre */}
                       <h3 className="heading-3 mb-4">{result.title}</h3>
 
                       {/* Description courte */}
-                      <p className="text-white/90 font-inter leading-relaxed text-sm md:text-base mb-6">
+                      <p className="text-white font-inter leading-relaxed text-sm md:text-base mb-6">
                         {result.shortDescription}
                       </p>
 
@@ -240,7 +240,7 @@ export default function ExpectedResults() {
                           {result.tags.map((tag, tagIndex) => (
                             <span
                               key={tagIndex}
-                              className="inline-block bg-green-500/20 border border-green-400/30 text-green-300 text-xs px-3 py-2 rounded-full font-medium"
+                              className="inline-block bg-green-700 border border-green-600 text-white text-xs px-3 py-2 rounded-full font-bold"
                             >
                               {tag}
                             </span>
@@ -278,7 +278,7 @@ export default function ExpectedResults() {
                     {/* Bouton Agrandir en position absolue uniquement sur grand écran */}
                     <button
                       onClick={() => handleOpenCard(index)}
-                      className="hidden lg:inline-flex absolute bottom-10 right-10 items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 border border-white/30 rounded-lg text-white text-sm font-medium transition-all duration-200 hover:scale-105 cursor-pointer"
+                      className="hidden lg:inline-flex absolute bottom-6 right-6 items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 border border-white/30 rounded-lg text-white text-sm font-medium transition-all duration-200 hover:scale-105 cursor-pointer"
                     >
                       <svg
                         width="16"
@@ -349,18 +349,18 @@ export default function ExpectedResults() {
                         </h3>
 
                         {/* Description complète au-dessus du SVG */}
-                        <p className="text-white/90 font-inter leading-relaxed text-sm md:text-lg lg:text-xl w-full md:max-w-4xl break-words hyphens-auto mb-6 whitespace-pre-line text-justify">
+                        <p className="text-white font-inter leading-relaxed text-sm md:text-lg lg:text-xl w-full md:max-w-4xl break-words hyphens-auto mb-6 whitespace-pre-line text-justify">
                           {result.fullDescription}
                         </p>
 
                         {/* Exemple concret en italique */}
-                        <p className="text-white/80 font-inter leading-relaxed text-sm md:text-base lg:text-lg w-full md:max-w-4xl break-words hyphens-auto mb-10 italic text-justify">
+                        <p className="text-white font-inter leading-relaxed text-sm md:text-base lg:text-lg w-full md:max-w-4xl break-words hyphens-auto mb-10 italic text-justify">
                           {result.example}
                         </p>
 
                         {/* Info pour agrandir */}
                         <div className="mb-4 text-center">
-                          <p className="text-white/60 text-sm italic">
+                          <p className="text-white/90 text-sm italic">
                             💡 Cliquez sur les images pour les agrandir et voir plus de détails
                           </p>
                         </div>

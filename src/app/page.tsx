@@ -20,7 +20,7 @@ export default function Home() {
       <ThreeBackground />
 
       {/* Gradient overlay for depth */}
-      <div className="fixed inset-0 -z-5 bg-gradient-to-br from-black/80 via-[#0f2112]/60 to-black/80 pointer-events-none" />
+      <div className="fixed inset-0 -z-5 bg-gradient-to-br from-black/80 via-[#f26335]/90 to-black/80 pointer-events-none" />
 
       {/* Header avec logo et liens sociaux */}
       <Header />

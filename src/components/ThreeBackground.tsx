@@ -29,53 +29,92 @@ export default function ThreeBackground() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     containerRef.current.appendChild(renderer.domElement);
 
-    // Particles
-    const particlesGeometry = new THREE.BufferGeometry();
-    const particleCount = 1500;
-    const positions = new Float32Array(particleCount * 3);
-    const colors = new Float32Array(particleCount * 3);
-
-    // Green color palette matching your theme
-    const greenColors = [
-      new THREE.Color(0x0f2112), // Dark green
-      new THREE.Color(0x125514), // Medium green
-      new THREE.Color(0x1a7a1a), // Lighter green
-      new THREE.Color(0x22a022), // Bright green
-      new THREE.Color(0xffffff), // White for accents
+    // Orange color palette based on #f26335
+    const orangeColors = [
+      new THREE.Color(0x000000), // Black
+      new THREE.Color(0x8B2500), // Dark orange
+      new THREE.Color(0xCC3300), // Medium dark orange
+      new THREE.Color(0xf26335), // Main orange (#f26335)
+      new THREE.Color(0xFF6347), // Bright orange
     ];
 
-    for (let i = 0; i < particleCount; i++) {
-      // Random position in 3D space
-      positions[i * 3] = (Math.random() - 0.5) * 100;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 100;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 50;
+    // Construction-themed objects (replacing particles)
+    const constructionObjects: THREE.Mesh[] = [];
+    const objectCount = 80;
 
-      // Random color from palette
-      const color = greenColors[Math.floor(Math.random() * greenColors.length)];
-      colors[i * 3] = color.r;
-      colors[i * 3 + 1] = color.g;
-      colors[i * 3 + 2] = color.b;
+    for (let i = 0; i < objectCount; i++) {
+      let geometry;
+      const objectType = Math.floor(Math.random() * 10);
+
+      switch (objectType) {
+        case 0: // Bricks (boxes)
+          geometry = new THREE.BoxGeometry(1.2, 0.6, 0.9);
+          break;
+        case 1: // Steel beams (long boxes)
+          geometry = new THREE.BoxGeometry(3.0, 0.3, 0.3);
+          break;
+        case 2: // Pipes (cylinders)
+          geometry = new THREE.CylinderGeometry(0.15, 0.15, 1.8, 8);
+          break;
+        case 3: // Bolts/Screws
+          geometry = new THREE.CylinderGeometry(0.24, 0.24, 0.9, 6);
+          break;
+        case 4: // Wooden planks
+          geometry = new THREE.BoxGeometry(2.4, 0.3, 0.45);
+          break;
+        case 5: // Concrete blocks
+          geometry = new THREE.BoxGeometry(0.9, 0.9, 0.9);
+          break;
+        case 6: // Nails (thin cylinders)
+          geometry = new THREE.CylinderGeometry(0.08, 0.08, 1.5, 6);
+          break;
+        case 7: // Cones (safety cones)
+          geometry = new THREE.ConeGeometry(0.5, 1.2, 8);
+          break;
+        case 8: // Hexagonal nuts
+          geometry = new THREE.CylinderGeometry(0.35, 0.35, 0.25, 6);
+          break;
+        case 9: // T-beams (combined boxes)
+          const tBeam = new THREE.BoxGeometry(0.3, 1.5, 0.3);
+          geometry = tBeam;
+          break;
+        default:
+          geometry = new THREE.BoxGeometry(0.9, 0.9, 0.9);
+      }
+
+      const material = new THREE.MeshBasicMaterial({
+        color: orangeColors[Math.floor(Math.random() * orangeColors.length)],
+        wireframe: false,
+        transparent: true,
+        opacity: 0.6,
+      });
+
+      const mesh = new THREE.Mesh(geometry, material);
+
+      // Random position
+      mesh.position.set(
+        (Math.random() - 0.5) * 100,
+        (Math.random() - 0.5) * 100,
+        (Math.random() - 0.5) * 50
+      );
+
+      // Random rotation
+      mesh.rotation.set(
+        Math.random() * Math.PI,
+        Math.random() * Math.PI,
+        Math.random() * Math.PI
+      );
+
+      // Store random rotation speeds
+      (mesh.userData as { rotationSpeed: THREE.Vector3 }).rotationSpeed = new THREE.Vector3(
+        (Math.random() - 0.5) * 0.005,
+        (Math.random() - 0.5) * 0.005,
+        (Math.random() - 0.5) * 0.005
+      );
+
+      constructionObjects.push(mesh);
+      scene.add(mesh);
     }
-
-    particlesGeometry.setAttribute(
-      'position',
-      new THREE.BufferAttribute(positions, 3)
-    );
-    particlesGeometry.setAttribute(
-      'color',
-      new THREE.BufferAttribute(colors, 3)
-    );
-
-    const particlesMaterial = new THREE.PointsMaterial({
-      size: 0.15,
-      vertexColors: true,
-      transparent: true,
-      opacity: 0.8,
-      blending: THREE.AdditiveBlending,
-    });
-
-    const particles = new THREE.Points(particlesGeometry, particlesMaterial);
-    scene.add(particles);
 
     // Floating geometric shapes
     const geometries = [
@@ -91,7 +130,7 @@ export default function ThreeBackground() {
     for (let i = 0; i < shapeCount; i++) {
       const geometry = geometries[Math.floor(Math.random() * geometries.length)];
       const material = new THREE.MeshBasicMaterial({
-        color: greenColors[Math.floor(Math.random() * (greenColors.length - 1))],
+        color: orangeColors[Math.floor(Math.random() * (orangeColors.length - 1))],
         wireframe: true,
         transparent: true,
         opacity: 0.3,
@@ -145,9 +184,16 @@ export default function ThreeBackground() {
       frameId = requestAnimationFrame(animate);
       const elapsedTime = clock.getElapsedTime();
 
-      // Rotate particles slowly
-      particles.rotation.y = elapsedTime * 0.05;
-      particles.rotation.x = Math.sin(elapsedTime * 0.1) * 0.1;
+      // Animate construction objects
+      constructionObjects.forEach((obj, index) => {
+        const speed = obj.userData.rotationSpeed as THREE.Vector3;
+        obj.rotation.x += speed.x;
+        obj.rotation.y += speed.y;
+        obj.rotation.z += speed.z;
+
+        // Floating motion
+        obj.position.y += Math.sin(elapsedTime + index * 0.5) * 0.002;
+      });
 
       // Animate geometric shapes
       shapes.forEach((shape, index) => {
@@ -177,8 +223,10 @@ export default function ThreeBackground() {
       cancelAnimationFrame(frameId);
 
       // Dispose of Three.js resources
-      particlesGeometry.dispose();
-      particlesMaterial.dispose();
+      constructionObjects.forEach(obj => {
+        obj.geometry.dispose();
+        (obj.material as THREE.Material).dispose();
+      });
       geometries.forEach(geo => geo.dispose());
       shapes.forEach(shape => {
         (shape.material as THREE.Material).dispose();

@@ -108,7 +108,7 @@ body {
 .text-description {
   font-size: 1.125rem;
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 1);
   line-height: 1.625;
 }
 
@@ -122,7 +122,7 @@ body {
 .text-subdescription {
   font-size: 1rem;
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.95);
   line-height: 1.625;
 }
 
@@ -133,37 +133,6 @@ h1 {
 
 h2 {
   font-weight: 600;
-}
-
-/* Dégradé double diagonal miroir - tons verts foncés */
-.bg-dual-diagonal {
-  background-image: 
-    linear-gradient(135deg, #000000 0%, #0f2112 50%),
-    linear-gradient(315deg, #000000 0%, #0f2112 50%);
-  background-size: 300% 300%, 300% 300%;
-}
-
-/* Animation simultanée des deux coins miroirs */
-@keyframes gradient-organic {
-  0% {
-    background-position: 0% 0%, 100% 100%;
-  }
-  25% {
-    background-position: 50% 50%, 50% 50%;
-  }
-  50% {
-    background-position: 100% 100%, 0% 0%;
-  }
-  75% {
-    background-position: 50% 50%, 50% 50%;
-  }
-  100% {
-    background-position: 0% 0%, 100% 100%;
-  }
-}
-
-.animate-gradient-x {
-  animation: gradient-organic 10s ease-in-out infinite;
 }
 
 /* Animation de scroll pour le carrousel de témoignages */
