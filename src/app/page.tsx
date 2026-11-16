@@ -1,83 +1,49 @@
-// Landing page Sabzi - Agence Tech Charpentiers & Menuisiers
-// Logiciels spécifiques, automatisation et IA sur-mesure
-"use client"
+import Hero from "@/components/Hero";
+import JsonLd from "@/components/JsonLd";
+import ServiceTabs from "@/components/ServiceTabs";
+import { BlogTeaser, CallToAction, KeyFigures, Method, Projects, Testimonials } from "@/components/Sections";
+import { getCities, getPosts, getProjects } from "@/lib/queries";
+import { services, site } from "@/lib/site";
 
-import Image from "next/image";
-import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
-import ExpectedResults from "@/components/ExpectedResults";
-import TestimonialSection from "@/components/TestimonialSection";
-import ProcessSection from "@/components/ProcessSection";
-import ProjectManagementSection from "@/components/ProjectManagementSection";
-import PricingSection from "@/components/PricingSection";
-import ThreeBackground from "@/components/ThreeBackground";
+export const revalidate = 300;
 
-
-export default function Home() {
+export default async function Home() {
+  const [projects, posts, cities] = await Promise.all([getProjects(3), getPosts(3), getCities()]);
   return (
-    <div className="min-h-screen relative">
-      {/* Three.js Animated Background */}
-      <ThreeBackground />
-
-      {/* Gradient overlay for depth */}
-      <div className="fixed inset-0 -z-5 bg-gradient-to-br from-black/80 via-[#f26335]/90 to-black/80 pointer-events-none" />
-
-      {/* Header avec logo et liens sociaux */}
-      <Header />
-
-      {/* Section Hero avec H1, H2, H3, tag bulle et CTA */}
-      <HeroSection />
-
-      {/* Section Résultats attendus */}
-      <ExpectedResults />
-
-      {/* Section Processus - Notre Méthode (4 étapes) */}
-      <ProcessSection />
-
-      {/* Section Témoignages */}
-      <TestimonialSection />
-
-      {/* Section Gestion de Projet (approche sur-mesure) */}
-      <ProjectManagementSection />
-
-      {/* Section Tarification mise en avant */}
-      <PricingSection />
-
-      {/* Footer simple */}
-      <footer className="border-t border-white/10 py-12">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <div className="mb-8">
-            <h3 className="text-2xl font-arvo text-white mb-4">
-              <Image
-                src="/logo_blanc.png"
-                alt="Logo Sabzi"
-                width={100}
-                height={100}
-                className="inline mr-2"
-              />
-            </h3>
-            <p className="text-white/80 font-inter max-w-2xl mx-auto">
-              Agence tech & IA spécialisée dans le secteur de la construction{" "}
-              <br></br>
-              Logiciels sur-mesure, automatisation et IA pour professionnels.
-            </p>
+    <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: site.name,
+          url: site.url,
+          logo: `${site.url}/logo_orange.png`,
+          description: site.description,
+          email: site.email,
+          telephone: site.phone,
+          priceRange: `À partir de ${site.priceFrom}`,
+          address: { "@type": "PostalAddress", addressLocality: site.city, addressCountry: "FR" },
+          areaServed: (cities.length ? cities.map((c) => c.name) : [site.city]).map((name) => ({ "@type": "City", name })),
+          sameAs: [site.linkedin, site.youtube],
+        }}
+      />
+      <Hero badge={`Basé à ${site.city} · Provence et vallée du Rhône`} title={site.title} subtitle={site.baseline} />
+      <KeyFigures />
+      <section id="services" className="border-y border-line bg-white">
+        <div className="container-site flex flex-col gap-12 py-20 lg:py-24">
+          <div className="flex max-w-3xl flex-col gap-3">
+            <p className="eyebrow">Services</p>
+            <h2 className="h-section">Quel est votre besoin ?</h2>
+            <p className="text-muted">Choisissez un sujet : vous voyez ce que je peux construire pour vous.</p>
           </div>
-
-          {/* Contact */}
-          <div className="mb-8">
-            <p className="text-white/90 font-inter">
-              📧 pro@syamakazadeh.com | 📞 +33 6 75 45 30 07
-            </p>
-          </div>
-
-          {/* Copyright */}
-          <div className="border-t border-white/10 pt-6">
-            <p className="text-white/60 font-inter text-sm">
-              &copy; 2025 Sabzi. Tous droits réservés.
-            </p>
-          </div>
+          <ServiceTabs services={services} />
         </div>
-      </footer>
-    </div>
+      </section>
+      <Projects projects={projects} />
+      <Method />
+      <Testimonials />
+      <BlogTeaser posts={posts} />
+      <CallToAction />
+    </>
   );
 }

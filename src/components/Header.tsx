@@ -1,82 +1,30 @@
 import Image from "next/image";
+import Link from "next/link";
+import { site } from "@/lib/site";
+
+const links = [
+  { href: "/#services", label: "Services" },
+  { href: "/#realisations", label: "Réalisations" },
+  { href: "/#methode", label: "Méthode" },
+  { href: "/blog", label: "Blog" },
+];
 
 export default function Header() {
   return (
-    <header className="w-full py-8 px-6 sm:py-10">
-      <div className="max-w-7xl mx-auto flex items-center justify-center relative">
-        {/* Logo au centre */}
-        <div className="flex items-center">
-          <h1 className="heading-3">
-            {/* Logo mobile */}
-            <Image
-              src="/logo_blanc.png"
-              alt="Logo Sabzi"
-              width={100}
-              height={100}
-              className="inline mr-2 sm:hidden"
-            />
-            {/* Logo desktop */}
-            <Image
-              src="/logo_blanc.png"
-              alt="Logo Sabzi"
-              width={200}
-              height={200}
-              className="hidden sm:inline mr-2"
-            />
-          </h1>
-        </div>
-
-        {/* Liens réseaux sociaux à droite */}
-        <div className="flex items-center space-x-2 absolute right-0 sm:space-x-4">
-          <a
-            href="https://www.linkedin.com/in/syamakazadeh"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-gray-300 transition-colors"
-          >
-            {/* LinkedIn mobile */}
-            <Image
-              src="/linkedin.svg"
-              alt="LinkedIn"
-              width={24}
-              height={24}
-              className="inline mr-2 hover:scale-110 transition-transform duration-200 sm:hidden"
-            />
-            {/* LinkedIn desktop */}
-            <Image
-              src="/linkedin.svg"
-              alt="LinkedIn"
-              width={30}
-              height={30}
-              className="hidden sm:inline mr-2 hover:scale-110 transition-transform duration-200"
-            />
-          </a>
-
-          <a
-            href="https://www.youtube.com/@syamakazadeh"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-gray-300 transition-colors"
-          >
-            {/* YouTube mobile */}
-            <Image
-              src="/youtube.svg"
-              alt="YouTube"
-              width={24}
-              height={24}
-              className="inline mr-2 hover:scale-110 transition-transform duration-200 sm:hidden"
-            />
-            {/* YouTube desktop */}
-            <Image
-              src="/youtube.svg"
-              alt="YouTube"
-              width={30}
-              height={30}
-              className="hidden sm:inline mr-2 hover:scale-110 transition-transform duration-200"
-            />
-          </a>
-        </div>
-      </div>
+    <header className="container-site flex flex-wrap items-center justify-between gap-4 py-6">
+      <Link href="/" aria-label="Sabzi, accueil">
+        <Image src="/logo_orange.png" alt="Sabzi" width={334} height={130} priority className="h-9 w-auto" />
+      </Link>
+      <nav aria-label="Navigation principale" className="flex flex-wrap items-center gap-x-7 gap-y-1 text-[15px] font-medium">
+        {links.map((l) => (
+          <Link key={l.href} href={l.href} className="py-3 hover:text-brand-dark">
+            {l.label}
+          </Link>
+        ))}
+        <a href={site.booking} className="btn-primary !min-h-11 !px-5 !py-2 text-[15px] !font-semibold">
+          Programmer une réunion
+        </a>
+      </nav>
     </header>
   );
 }
