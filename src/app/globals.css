@@ -123,3 +123,49 @@ body {
   background: none;
   padding: 0;
 }
+
+/* Back-office */
+@layer components {
+  .input {
+    @apply min-h-11 w-full rounded-[10px] border border-[#d9ccc4] bg-white px-3.5 py-2.5 text-[15px] text-ink;
+  }
+  .label {
+    @apply flex flex-col gap-1.5 text-[15px] font-semibold;
+  }
+  .hint {
+    @apply text-[13px] font-normal text-muted;
+  }
+  .btn-admin {
+    @apply inline-flex min-h-11 items-center justify-center rounded-[10px] bg-brand px-5 py-2.5 text-[15px] font-bold text-ink transition hover:bg-[#e2552a] disabled:opacity-60;
+  }
+  .btn-quiet {
+    @apply inline-flex min-h-11 items-center justify-center rounded-[10px] border border-[#d9ccc4] bg-white px-4 py-2.5 text-[15px] font-semibold text-ink transition hover:border-ink disabled:opacity-60;
+  }
+  .btn-danger {
+    @apply inline-flex min-h-11 items-center justify-center rounded-[10px] border border-[#e8b4ae] bg-white px-4 py-2.5 text-[15px] font-semibold text-[#8c1d18] transition hover:bg-[#fbe0dd];
+  }
+  .panel {
+    @apply rounded-2xl border border-line bg-white p-6;
+  }
+  .badge {
+    @apply inline-block rounded-full px-2.5 py-0.5 text-xs font-bold whitespace-nowrap;
+  }
+  .badge-ok {
+    @apply bg-[#ddebdd] text-[#14522c];
+  }
+  .badge-warn {
+    @apply bg-[#fff1d6] text-[#6b4500];
+  }
+  .badge-fail {
+    @apply bg-[#fbe0dd] text-[#8c1d18];
+  }
+  .badge-neutral {
+    @apply bg-line text-muted;
+  }
+  .th {
+    @apply border-b border-line-strong px-2 py-2.5 text-left text-sm font-semibold text-muted;
+  }
+  .td {
+    @apply border-b border-line px-2 py-3 text-sm;
+  }
+}

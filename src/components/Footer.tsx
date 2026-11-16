@@ -39,8 +39,9 @@ export default async function Footer() {
           <a href={site.youtube} className="py-1.5 hover:text-brand-dark">YouTube</a>
         </div>
       </div>
-      <p className="container-site border-t border-line py-6 text-sm text-soft">
-        © {new Date().getFullYear()} Sabzi. Tous droits réservés.
+      <p className="container-site flex flex-wrap justify-between gap-3 border-t border-line py-6 text-sm text-soft">
+        <span>© {new Date().getFullYear()} Sabzi. Tous droits réservés.</span>
+        <Link href="/mentions-legales" className="underline underline-offset-4 hover:text-brand-dark">Mentions légales</Link>
       </p>
     </footer>
   );

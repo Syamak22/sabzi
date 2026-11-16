@@ -80,10 +80,31 @@ export const contacts = pgTable("contacts", {
   message: text("message").notNull(),
   stage: varchar("stage", { length: 20 }).notNull().default("nouveau"),
   source: varchar("source", { length: 500 }).notNull().default(""),
+  notes: text("notes").notNull().default(""),
   ...timestamps,
+});
+
+export const media = pgTable("media", {
+  id: serial("id").primaryKey(),
+  filename: varchar("filename", { length: 255 }).notNull().unique(),
+  alt: varchar("alt", { length: 255 }).notNull().default(""),
+  mime: varchar("mime", { length: 80 }).notNull(),
+  size: integer("size").notNull(),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+});
+
+// Mots-clés suivis dans le centre SEO.
+export const keywords = pgTable("keywords", {
+  id: serial("id").primaryKey(),
+  term: varchar("term", { length: 200 }).notNull().unique(),
+  targetPath: varchar("target_path", { length: 300 }).notNull().default(""),
+  createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });
 
 export type Post = typeof posts.$inferSelect;
 export type City = typeof cities.$inferSelect;
 export type Project = typeof projects.$inferSelect;
 export type Category = typeof categories.$inferSelect;
+export type Contact = typeof contacts.$inferSelect;
+export type Media = typeof media.$inferSelect;
+export type Keyword = typeof keywords.$inferSelect;

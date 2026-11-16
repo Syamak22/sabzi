@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { startTransition, useActionState } from "react";
 import { sendContact, type ContactState } from "./actions";
 
 const field = "min-h-12 rounded-xl border border-[#d9ccc4] bg-white px-4 py-3 text-base";
@@ -15,7 +15,16 @@ export default function ContactForm() {
     );
   }
   return (
-    <form action={action} className="card flex flex-col gap-5 p-7 sm:p-9">
+    <form
+      action={action}
+      onSubmit={(e) => {
+        // Évite que le formulaire soit vidé si l'envoi échoue.
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        startTransition(() => action(form));
+      }}
+      className="card flex flex-col gap-5 p-7 sm:p-9"
+    >
       <div className="grid gap-5 sm:grid-cols-2">
         <label className="flex flex-col gap-1.5 font-semibold">
           Nom

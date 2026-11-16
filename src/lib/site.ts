@@ -107,3 +107,12 @@ export const testimonials = {
 };
 
 export const CITY_PREFIX = "logiciel-site-web-";
+
+// Mentions légales : à compléter avant la mise en ligne. Tant qu'un champ est vide, la page n'est pas indexée.
+export const legal = {
+  editor: "Syamak Azadeh",
+  status: "", // ex. « Entrepreneur individuel (micro-entreprise) »
+  siret: "",
+  address: "",
+  host: "", // ex. « Railway Corp., 548 Market St, San Francisco, CA 94104, États-Unis »
+};

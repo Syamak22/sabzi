@@ -10,7 +10,7 @@ export function getDb(): Db | null {
   const url = process.env.DATABASE_URL;
   if (!url) return null;
   if (!globalForDb.__sabziDb) {
-    globalForDb.__sabziDb = drizzle(postgres(url, { max: 5 }), { schema });
+    globalForDb.__sabziDb = drizzle(postgres(url, { max: 5, onnotice: () => {} }), { schema });
   }
   return globalForDb.__sabziDb;
 }
